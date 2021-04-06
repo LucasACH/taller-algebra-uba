@@ -9,6 +9,8 @@ estanRelacionados x y | x < 4 && y < 4 = True
 
 -- (2) prodInt: calcula el producto interno entre dos vectores de R2.
 
+prodInt :: Num a => (a, a) -> (a, a) -> a
+prodInt (ux, uy) (vx, vy) = ux * vx + uy * vy
 
 
 -- (3) todoMenor: dados dos vectores de R2, decide si es cierto que cada coordenada del primer vector es menor a la coordenada correspondiente del segundo vector.
