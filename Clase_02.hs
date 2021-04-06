@@ -27,6 +27,8 @@ distanciaPuntos (px, py) (qx, qy) = sqrt((qx - px)^2 + (qy - py)^2)
 
 -- (5) sumaTerna: dada una terna de enteros, calcula la suma de sus tres elementos.
 
+sumaTerna :: Num a => (a, a, a) -> a
+sumaTerna (px, py, pz) = px + py + pz
 
 
 -- (6) posicPrimerPar: dada una terna de enteros, devuelve la posición del primer número par si es que hay alguno, y devuelve 4 si son todos impares.
