@@ -23,3 +23,12 @@ maximoabsoluto x y = maximo (absoluto x) (absoluto y)
 
 maximo3 :: Int -> Int -> Int -> Int
 maximo3 x y z = maximo z (maximo x y)
+
+
+-- (4) algunoEs0: dados dos números racionales, decide si alguno de los dos es igual a 0 (hacerlo dos veces, una sin usar y otra usando pattern matching).
+
+algunoEs0 :: Float -> Float -> Bool
+algunoEs0 x y = x * y == 0 -- Sin pattern matching
+
+algunoEs0_ :: Float -> Float -> Bool
+algunoEs0_ x y = x == 0 || y == 0 -- Con pattern matching
