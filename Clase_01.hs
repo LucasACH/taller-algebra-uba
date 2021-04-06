@@ -51,5 +51,8 @@ esMultiploDe x y = y `mod` x == 0
 
 -- (7) digitoUnidades: dado un número natural, extrae su dígito de las unidades.
 
+digitoUnidades :: Int -> Int 
+digitoUnidades n = n `mod` 10
+
 
 -- (8) digitoDecenas: dado un número natural, extrae su dígito de las decenas.
