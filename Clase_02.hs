@@ -15,6 +15,8 @@ prodInt (ux, uy) (vx, vy) = ux * vx + uy * vy
 
 -- (3) todoMenor: dados dos vectores de R2, decide si es cierto que cada coordenada del primer vector es menor a la coordenada correspondiente del segundo vector.
 
+todoMenor :: (Ord a, Num a) => (a, a) -> (a, a) -> Bool
+todoMenor (ux, uy) (vx, vy) = ux < vx && uy < vy
 
 
 -- (4) distanciaPuntos: calcula la distancia entre dos puntos de R2.
