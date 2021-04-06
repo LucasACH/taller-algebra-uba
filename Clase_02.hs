@@ -42,6 +42,8 @@ posicPrimerPar (px, py, pz) | px `mod` 2 == 0 = 1
 
 -- (7) crearPar :: a -> b -> (a, b): crea un par a partir de sus dos componentes dadas por separado (debe funcionar para elementos de cualquier tipo).
 
+crearPar :: a -> b -> (a, b)
+crearPar x y = (x, y)
 
 
 -- (8) invertir :: (a, b) -> (b, a): invierte los elementos del par pasado como parámetro (debe funcionar para elementos de cualquier tipo).
