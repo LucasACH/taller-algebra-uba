@@ -32,3 +32,21 @@ algunoEs0 x y = x * y == 0 -- Sin pattern matching
 
 algunoEs0_ :: Float -> Float -> Bool
 algunoEs0_ x y = x == 0 || y == 0 -- Con pattern matching
+
+
+-- (5) ambosSon0: dados dos números racionales, decide si ambos son iguales a 0 (hacerlo dos veces, una sin usar y otra usando pattern matching).
+
+ambosSon0 :: Int -> Int -> Bool
+ambosSon0 x y = x + y == 0 -- Sin pattern matching
+
+ambosSon0_ :: Int -> Int -> Bool
+ambosSon0_ x y = x == 0 && y == 0 -- Con pattern matching
+
+
+-- (6) esMultiploDe: dados dos números naturales, decidir si el primero es múltiplo del segundo.
+
+
+-- (7) digitoUnidades: dado un número natural, extrae su dígito de las unidades.
+
+
+-- (8) digitoDecenas: dado un número natural, extrae su dígito de las decenas.
