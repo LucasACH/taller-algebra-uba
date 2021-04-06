@@ -45,6 +45,9 @@ ambosSon0_ x y = x == 0 && y == 0 -- Con pattern matching
 
 -- (6) esMultiploDe: dados dos números naturales, decidir si el primero es múltiplo del segundo.
 
+esMultiploDe :: Int -> Int -> Bool
+esMultiploDe x y = y `mod` x == 0
+
 
 -- (7) digitoUnidades: dado un número natural, extrae su dígito de las unidades.
 
