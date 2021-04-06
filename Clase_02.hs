@@ -21,6 +21,8 @@ todoMenor (ux, uy) (vx, vy) = ux < vx && uy < vy
 
 -- (4) distanciaPuntos: calcula la distancia entre dos puntos de R2.
 
+distanciaPuntos :: Floating a => (a, a) -> (a, a) -> a
+distanciaPuntos (px, py) (qx, qy) = sqrt((qx - px)^2 + (qy - py)^2)
 
 
 -- (5) sumaTerna: dada una terna de enteros, calcula la suma de sus tres elementos.
