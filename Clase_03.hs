@@ -33,3 +33,5 @@ todosIguales :: Int -> Bool
 todosIguales n | n < 10 = True 
                | (n `mod` 100) `mod` 10 == (n `mod` 100) `div` 10 = todosIguales(n `div` 10)
                | otherwise = False
+
+               
