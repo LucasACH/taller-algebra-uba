@@ -22,5 +22,14 @@ medioFact n | n <= 1 = 1
 
 -- (4) Escribir una función que determine la suma de dígitos de un número positivo. Para esta función pueden utilizar div y mod.
 
+sumaDigitos :: Int -> Int
+sumaDigitos n | n < 10 = n
+              | otherwise =  n `mod` 10 + sumaDigitos(n `div` 10)
+
 
 -- (5) Implementar una función que determine si todos los dígitos de un número son iguales.
+
+todosIguales :: Int -> Bool
+todosIguales n | n < 10 = True 
+               | (n `mod` 100) `mod` 10 == (n `mod` 100) `div` 10 = todosIguales(n `div` 10)
+               | otherwise = False
