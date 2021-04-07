@@ -50,3 +50,4 @@ crearPar x y = (x, y)
 
 invertir :: (a, b) -> (b, a)
 invertir (x, y) = (y, x)
+
