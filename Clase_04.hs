@@ -52,3 +52,11 @@ e = eAprox 10
 f6 :: Int -> Int -> Int 
 f6 0 m = 0 
 f6 n m = f6 (n-1) m + round (f2 m (fromIntegral n)) 
+
+
+-- (7) Implementar una función sumaPotencias q n m que sume todas
+-- las potencias de la forma q^a+b con 1 ≤ a ≤ n y 1 ≤ b ≤ m
+
+sumaPotencias :: Float -> Int -> Int -> Float 
+sumaPotencias q n 0 = 0
+sumaPotencias q n m = sumaPotencias q n (m-1) + q^m*(f2 n q)
