@@ -60,3 +60,11 @@ f6 n m = f6 (n-1) m + round (f2 m (fromIntegral n))
 sumaPotencias :: Float -> Int -> Int -> Float 
 sumaPotencias q n 0 = 0
 sumaPotencias q n m = sumaPotencias q n (m-1) + q^m*(f2 n q)
+
+
+-- (8) Implementar una función sumaRacionales n m que sume todos
+-- los números racionales de la forma p/q con 1 ≤ p ≤ n y 1 ≤ q ≤ m.
+
+sumaRacionales :: Int -> Int -> Float
+sumaRacionales n 0 = 0
+sumaRacionales n m = fromIntegral(sumatoria n) / fromIntegral m + sumaRacionales n (m-1)
