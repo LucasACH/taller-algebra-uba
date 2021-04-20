@@ -4,6 +4,10 @@ sumatoria :: Int -> Int
 sumatoria 0 = 0
 sumatoria n = n + sumatoria (n-1)
 
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial n = n * factorial (n-1) 
+
 
 -- (1) sumatoria sobre i, desde 0 hasta n, de 2 potencia-i
 
@@ -29,3 +33,12 @@ f3 n q = f2 (2*n) q
 
 f4 :: Int -> Float -> Float
 f4 n q = f3 n q - f2 (n-1) q 
+
+
+-- (5) Implementar una función eAprox :: Integer -> Float que
+-- aproxime el valor del número e a partir de la siguiente
+-- sumatoria:
+
+eAprox :: Integer -> Float
+eAprox 0 = 1
+eAprox n = 1 / fromIntegral(factorial n) + eAprox (n-1)
