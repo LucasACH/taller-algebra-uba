@@ -14,7 +14,9 @@ f1 n = 2^n + f1(n-1)
 
 -- (2) sumatoria sobre i, desde 1 hasta n, de q potencia-i
 
-
+f2 :: Int -> Int -> Int
+f2 0 q = 1
+f2 n q = q^n + f2 (n-1) q 
 
 
 -- (3) sumatoria sobre i, desde 1 hasta 2n, de q potencia-i
