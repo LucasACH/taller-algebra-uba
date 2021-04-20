@@ -42,3 +42,13 @@ f4 n q = f3 n q - f2 (n-1) q
 eAprox :: Integer -> Float
 eAprox 0 = 1
 eAprox n = 1 / fromIntegral(factorial n) + eAprox (n-1)
+
+e :: Float
+e = eAprox 10
+
+
+-- (6) Implementar la siguiente función:
+
+f6 :: Int -> Int -> Int 
+f6 0 m = 0 
+f6 n m = f6 (n-1) m + round (f2 m (fromIntegral n)) 
