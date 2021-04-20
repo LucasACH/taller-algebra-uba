@@ -68,3 +68,16 @@ sumaPotencias q n m = sumaPotencias q n (m-1) + q^m*(f2 n q)
 sumaRacionales :: Int -> Int -> Float
 sumaRacionales n 0 = 0
 sumaRacionales n m = fromIntegral(sumatoria n) / fromIntegral m + sumaRacionales n (m-1)
+
+
+--------------------- EJERCICIOS DE TAREA ---------------------
+
+-- (1)
+
+g1 :: Int -> Int -> Int
+g1 i n | i > n = 0
+       | otherwise = i^i + g1 (i+1) n
+
+
+-- (2)
+
