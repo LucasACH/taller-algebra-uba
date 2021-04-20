@@ -72,12 +72,15 @@ sumaRacionales n m = fromIntegral(sumatoria n) / fromIntegral m + sumaRacionales
 
 --------------------- EJERCICIOS DE TAREA ---------------------
 
--- (1)
+-- (1) Implementar la siguiente función:
 
 g1 :: Int -> Int -> Int
 g1 i n | i > n = 0
        | otherwise = i^i + g1 (i+1) n
 
 
--- (2)
+-- (2) Implementar la siguiente función:
 
+g2 :: Int -> Int
+g2 0 = 0
+g2 n = n^n * n + g2 (n-1)   
