@@ -10,3 +10,19 @@ sumaDivisoresHasta n k | k == 1 = 1
 
 sumaDivisores :: Int -> Int
 sumaDivisores n = sumaDivisoresHasta n n 
+
+
+-- (3) Implementar menorDivisor :: Int -> Int que calcule el menor divisor
+-- (mayor que 1) de un natural n.
+
+menorDivisor :: Int -> Int
+menorDivisor n | n `mod` 2 == 0 = 2
+               | n `mod` 3 == 0 = 3
+               | otherwise = n
+
+
+-- (4) Implementar la función esPrimo :: Int -> Bool.
+
+
+
+-- (5) Implementar la función nEsimoPrimo :: Int -> Int que devuelve el n-esi
