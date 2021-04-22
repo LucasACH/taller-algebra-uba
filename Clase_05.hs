@@ -23,6 +23,8 @@ menorDivisor n | n `mod` 2 == 0 = 2
 
 -- (4) Implementar la función esPrimo :: Int -> Bool.
 
+esPrimo :: Int -> Bool
+esPrimo n = (sumaDivisores n) - 1 == n
 
 
 -- (5) Implementar la función nEsimoPrimo :: Int -> Int que devuelve el n-esi
