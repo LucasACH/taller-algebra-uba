@@ -1,5 +1,7 @@
 -- Funciones base
 
+module Clase_04 (sumatoria, factorial) where
+
 sumatoria :: Int -> Int 
 sumatoria 0 = 0
 sumatoria n = n + sumatoria (n-1)
