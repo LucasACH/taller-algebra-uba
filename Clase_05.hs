@@ -27,4 +27,11 @@ esPrimo :: Int -> Bool
 esPrimo n = (sumaDivisores n) - 1 == n
 
 
--- (5) Implementar la función nEsimoPrimo :: Int -> Int que devuelve el n-esi
+-- (5) Implementar la función nEsimoPrimo :: Int -> Int que devuelve el 
+-- n-esimo primo (n ≥ 1, el primer primo es el 2, el segundo es el 3, el
+-- tercero es el 5, etc.)
+
+nEsimoPrimo :: Int -> Int
+nEsimoPrimo 1 = 2
+nEsimoPrimo n | esPrimo n = n
+              | otherwise = nEsimoPrimo (n-1)
