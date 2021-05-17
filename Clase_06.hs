@@ -68,17 +68,15 @@ quitarTodas n l | cantidadDeApariciones n l > 0 && n == head l = quitarTodas n (
 
 hayRepetidos :: [Int] -> Bool
 hayRepetidos [] = False
-hayRepetidos (x:xs) | cantidadDeApariciones x xs < 1 = hayRepetidos xs
-                    | otherwise = True
+hayRepetidos (x:xs) = cantidadDeApariciones x xs == 1 || hayRepetidos xs
+                  
                
- 
-
 -- (9) eliminarRepetidosAlFinal :: [Int] -> [Int] que deja en la lista la primera aparición
 -- de cada elemento, eliminando las repeticiones adicionales.
 
 eliminarRepetidosAlFinal :: [Int] -> [Int]
 eliminarRepetidosAlFinal [] = []
-eliminarRepetidosAlFinal l = (head l) : quitarTodas (head l) (eliminarRepetidosAlFinal (tail l)) 
+eliminarRepetidosAlFinal (x:xs) = x : quitarTodas x (eliminarRepetidosAlFinal (xs)) 
                            
 
 -- (10) eliminarRepetidosAlInicio :: [Int] -> [Int] que deja en la lista la última aparición
@@ -86,8 +84,7 @@ eliminarRepetidosAlFinal l = (head l) : quitarTodas (head l) (eliminarRepetidosA
 
 eliminarRepetidosAlInicio :: [Int] -> [Int]
 eliminarRepetidosAlInicio [] = []
-eliminarRepetidosAlInicio l | cantidadDeApariciones (head l) l > 1 = quitarTodas (head l) (tail l)
-                            | otherwise = (head l) : quitarTodas (head l) (tail l)
-
+eliminarRepetidosAlInicio (x:xs) | cantidadDeApariciones x xs > 0 = (eliminarRepetidosAlInicio (xs))
+                                 | otherwise = x : (eliminarRepetidosAlInicio (xs))
 
 -- (11) maximo :: [Int] -> Int que calcula el máximo elemento de una lista no vacía.
