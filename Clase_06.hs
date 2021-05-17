@@ -1,20 +1,21 @@
-largoLista :: [Int] -> Int
-largoLista l | l == [] = 0
-             | otherwise = 1 + largoLista( tail(l) )
-
-
 -- (1) productoria :: [Int] -> Int que devuelve la productoria de los elementos.
 
 productoria :: [Int] -> Int
-productoria l | largoLista l == 1 = head l
-productoria l = head l * productoria( tail l )
+productoria [] = 1
+productoria (x : xs) = x * productoria xs
 
 
 -- (2) sumarN :: Int -> [Int] -> [Int] que dado un número N y una lista xs, suma N a cada
 -- elemento de xs.
 
+sumarN :: Int -> [Int] -> [Int]
+sumarN n [] = []
+sumarN n (x:xs) = (x + n) : sumarN n xs
+
 -- (3) sumarElPrimero :: [Int] -> [Int] que dada una lista no vacía xs, suma el primer
 -- elemento a cada elemento de xs. Ejemplo sumarElPrimero [1,2,3] [2,3,4]
+
+
 
 -- (4) sumarElUltimo :: [Int] -> [Int] que dada una lista no vacía xs, suma el último
 -- elemento a cada elemento de xs. Ejemplo sumarElUltimo [1,2,3] [4,5,6]
