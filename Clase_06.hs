@@ -88,3 +88,11 @@ eliminarRepetidosAlInicio (x:xs) | cantidadDeApariciones x xs > 0 = (eliminarRep
                                  | otherwise = x : (eliminarRepetidosAlInicio (xs))
 
 -- (11) maximo :: [Int] -> Int que calcula el máximo elemento de una lista no vacía.
+
+maximo :: [Int] -> Int
+maximo (x:[]) = x
+maximo (x:xs) | x > head xs = maximo (x : tail xs)
+              | otherwise = maximo xs
+             
+
+             
