@@ -1,3 +1,13 @@
+pertenece :: Int -> [Int] -> Bool
+pertenece n l | l == [] = False
+              | otherwise = (n == head l) || pertenece n (tail l)
+
+cantidadDeApariciones :: Int -> [Int] -> Int
+cantidadDeApariciones n [] = 0
+cantidadDeApariciones n l | n == head l = 1 + cantidadDeApariciones n (tail l)
+                          | otherwise = cantidadDeApariciones n (tail l)
+
+
 -- (1) productoria :: [Int] -> Int que devuelve la productoria de los elementos.
 
 productoria :: [Int] -> Int
@@ -38,6 +48,12 @@ pares (x:xs) | even x = x : pares xs
 
 -- (6) quitar :: Int -> [Int] -> [Int] que elimina la primera aparición del elemento en la
 -- lista (de haberla).
+
+quitar :: Int -> [Int] -> [Int]
+quitar n [] = []
+quitar n l | cantidadDeApariciones n l > 1 && n == head l = tail l
+           | otherwise = (head l) : quitar n (tail l)
+
 
 -- (7) quitarTodas :: Int -> [Int] -> [Int] que elimina todas las apariciones del elemento
 -- en la lista (de haberla).
