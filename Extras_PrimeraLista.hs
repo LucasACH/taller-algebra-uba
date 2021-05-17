@@ -53,3 +53,14 @@ unos n | n < 1 = 0
 
        where div2 = n `div` 2
              mod2 = n `mod` 2
+
+
+-- (7) Escriba una función pi_approx :: Integer -> Double tal que para cada entero
+-- positivo n el valor de pi_approx sea
+
+
+-- pi_approx :: Integer -> Double
+-- pi_approx 0 = 3
+-- pi_approx n = 4 / divisor + pi_approx(n-1)
+           
+--             where divisor = 2*n * (2*n + 1) * (2*n + 2)
