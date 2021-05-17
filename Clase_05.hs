@@ -1,3 +1,5 @@
+import Clase_04 ( factorial ) 
+
 -- (1) Implementar una función sumaDivisoresHasta :: Int -> Int -> Int.
 
 sumaDivisoresHasta :: Int -> Int -> Int
@@ -35,3 +37,21 @@ nEsimoPrimo :: Int -> Int
 nEsimoPrimo 1 = 2
 nEsimoPrimo n | esPrimo n = n
               | otherwise = nEsimoPrimo (n-1)
+
+
+-- (6) Implementar menorFactDesde :: Int -> Int que dado m ≥ 1 encuentra el
+-- mínimo n ≥ m tal que n = k! para algún k.
+
+menorFactDesde :: Int -> Int
+menorFactDesde m = Clase_04.factorial m
+
+
+
+-- (7) Implementar mayorFactHasta :: Int -> Int que dado m ≥ 1 encuentra el
+-- máximo n ≤ m tal que n = k! para algún k.
+
+
+
+
+-- (8) Implementar esFact :: Int -> Bool que dado n ≥ 0 decide si existe un
+-- número entero k ≥ 0 tal que n = k!
