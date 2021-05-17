@@ -66,6 +66,13 @@ quitarTodas n l | cantidadDeApariciones n l > 0 && n == head l = quitarTodas n (
 
 -- (8) hayRepetidos :: [Int] -> Bool que indica si una lista tiene elementos repetidos.
 
+hayRepetidos :: [Int] -> Bool
+hayRepetidos [] = False
+hayRepetidos (x:xs) | cantidadDeApariciones x xs < 1 = hayRepetidos xs
+                    | otherwise = True
+               
+ 
+
 -- (9) eliminarRepetidosAlFinal :: [Int] -> [Int] que deja en la lista la primera aparición
 -- de cada elemento, eliminando las repeticiones adicionales.
 
