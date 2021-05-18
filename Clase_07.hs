@@ -75,3 +75,14 @@ partes :: Set Int -> Set (Set Int)
 partes [] = [[]]
 partes (x:xs) = unionC (partes xs) (agregarATodos x (partes xs))
 
+
+-- (6) partesN :: Int -> Set (Set Int) que genere los subconjuntos del conjunto
+-- {1, 2, 3, . . . , n}.
+
+partesN :: Int -> Set (Set Int)
+partesN n = partes [1..n]
+
+
+-- (7) productoCartesiano :: Set Int -> Set Int -> Set (Int, Int) que dados dos
+-- conjuntos genere todos los pares posibles (como pares de dos elementos) tomando el primer
+-- elemento del primer conjunto y el segundo elemento del segundo conjunto.
