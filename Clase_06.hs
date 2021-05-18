@@ -61,7 +61,7 @@ quitar n l | head l == n = tail l
 quitarTodas :: Int -> [Int] -> [Int]
 quitarTodas n [] = []
 quitarTodas n l | cantidadDeApariciones n l > 0 && n == head l = quitarTodas n (tail l)
-                     | otherwise = (head l) : quitarTodas n (tail l)
+                | otherwise = (head l) : quitarTodas n (tail l)
 
 
 -- (8) hayRepetidos :: [Int] -> Bool que indica si una lista tiene elementos repetidos.
