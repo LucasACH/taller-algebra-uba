@@ -86,3 +86,11 @@ partesN n = partes [1..n]
 -- (7) productoCartesiano :: Set Int -> Set Int -> Set (Int, Int) que dados dos
 -- conjuntos genere todos los pares posibles (como pares de dos elementos) tomando el primer
 -- elemento del primer conjunto y el segundo elemento del segundo conjunto.
+
+generadorTuplas :: Int -> Set Int -> Set (Int, Int)
+generadorTuplas n [] = []
+generadorTuplas n (c:cs) = (n,c) : generadorTuplas n cs
+
+productoCartesiano :: Set Int -> Set Int -> Set (Int, Int)
+productoCartesiano [] c = []
+productoCartesiano (x:xs) c = generadorTuplas x c ++ productoCartesiano xs c
