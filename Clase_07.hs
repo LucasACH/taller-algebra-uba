@@ -7,9 +7,17 @@ pertenece :: Int -> Set Int -> Bool
 pertenece x [] = False
 pertenece x (y:ys) = x == y || pertenece x ys
 
+perteneceC :: Set Int -> Set (Set Int) -> Bool
+perteneceC xs [] = False
+perteneceC xs (ys:yss) = xs == ys || perteneceC xs yss
+
 agregar :: Int -> Set Int -> Set Int
 agregar x c | pertenece x c = c 
             | otherwise = x : c
+
+agregarC :: Set Int -> Set (Set Int) -> Set (Set Int)
+agregarC xs xss | perteneceC xs xss = xss 
+               | otherwise = xs : xss
 
 incluido :: Set Int -> Set Int -> Bool
 incluido [] c = True
@@ -23,6 +31,11 @@ union :: Set Int -> Set Int -> Set Int
 union [] c = c
 union (x:xs) c | pertenece x c = union xs c
                | otherwise = x : (union xs c)
+
+unionC :: Set (Set Int) -> Set (Set Int) -> Set (Set Int)
+unionC [] c = c
+unionC (x:xs) c | perteneceC x c = unionC xs c
+                | otherwise = x : (unionC xs c)
 
 
 -- (2) interseccion :: Set Int -> Set Int -> Set Int que dado dos conjuntos, devuelve la
@@ -48,3 +61,17 @@ diferencia (x:xs) c | pertenece x c = diferencia xs c
 
 diferenciaSimetrica :: Set Int -> Set Int -> Set Int
 diferenciaSimetrica x c =  union (diferencia x c) (diferencia c x)
+
+
+-- (5) Implementar una función
+-- partes :: Set Int -> Set (Set Int) que genere el conjunto de partes de un conjunto
+-- dado.
+
+agregarATodos :: Int -> Set (Set Int) -> Set (Set Int)
+agregarATodos x [] = []
+agregarATodos x (c:cs) = agregarC (agregar x c) (agregarATodos x cs) 
+
+partes :: Set Int -> Set (Set Int)
+partes [] = [[]]
+partes (x:xs) = unionC (partes xs) (agregarATodos x (partes xs))
+
