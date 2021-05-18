@@ -37,5 +37,11 @@ interseccion (x:xs) c | pertenece x c = x : interseccion xs c
 -- (3) diferencia :: Set Int -> Set Int -> Set Int que dado los conjuntos A y B, devuelve
 -- A \ B.
 
+diferencia :: Set Int -> Set Int -> Set Int
+diferencia [] c = []
+diferencia x [] = []
+diferencia (x:xs) (c:cs) = (x - c) : diferencia xs cs
+
+
 -- (4) diferenciaSimetrica :: Set Int -> Set Int -> Set Int que dado los conjuntos A y
 -- B, devuelve la diferencia simétrica, es decir, A4B.
