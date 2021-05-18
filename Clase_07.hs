@@ -40,8 +40,11 @@ interseccion (x:xs) c | pertenece x c = x : interseccion xs c
 diferencia :: Set Int -> Set Int -> Set Int
 diferencia [] c = []
 diferencia x [] = []
-diferencia (x:xs) (c:cs) = (x - c) : diferencia xs cs
-
+diferencia (x:xs) c | pertenece x c = diferencia xs c
+                    | otherwise = x : diferencia xs c
 
 -- (4) diferenciaSimetrica :: Set Int -> Set Int -> Set Int que dado los conjuntos A y
 -- B, devuelve la diferencia simétrica, es decir, A4B.
+
+diferenciaSimetrica :: Set Int -> Set Int -> Set Int
+diferenciaSimetrica x c =  union (diferencia x c) (diferencia c x)
