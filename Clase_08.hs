@@ -61,7 +61,17 @@ insertarEnCadaPosDeTodasLasListas :: Set [Int] -> Int -> Set [Int]
 insertarEnCadaPosDeTodasLasListas [      ] c = []    
 insertarEnCadaPosDeTodasLasListas (xs:xss) c = (insertarEnCadaPos xs c (length xs + 1)) `union` (insertarEnCadaPosDeTodasLasListas xss c)
 
-
 permutaciones :: Set Int -> Set [Int]
 permutaciones [    ] = [[]]
 permutaciones (x:xs) =  insertarEnCadaPosDeTodasLasListas (permutaciones xs) x
+
+
+-- (5) Todas las formas de ubicar n bolitas numeradas en k cajas.
+
+listaEnterosHasta :: Int -> [Int]
+listaEnterosHasta 0 = []
+listaEnterosHasta n = n : listaEnterosHasta (n - 1)
+
+bolitasEnCajas :: Int -> Int -> Set [Int]
+bolitasEnCajas n k = variaciones ((listaEnterosHasta k) `union` (listaEnterosHasta n)) (length (listaEnterosHasta n))
+                   
