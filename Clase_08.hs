@@ -47,6 +47,21 @@ variaciones c k = agregarElementosAListas c (variaciones c (k - 1))
 -- (3) Implementar una función insertarEn :: [Int] -> Int -> Int -> [Int] que dados una lista l, un número n y una posición i (contando desde 1) devuelva una lista en donde se insertó n en la posición i de l y los elementos siguientes corridos en una posición.
 
 insertarEn :: [Int] -> Int -> Int -> [Int]
-insertarEn (x:xs) n i | i == 1 = n : (x:xs) 
-                      | otherwise = x : insertarEn xs n (i - 1) 
+insertarEn xs n i | i == 1 = n:xs 
+                  | otherwise = (head xs) : (insertarEn (tail xs) n (i - 1)) 
 
+
+-- (4) Implementar una función permutaciones :: Set Int -> Set [Int] que dado un conjunto de enteros, genere todas las posibles permutaciones de los números del conjunto pasado por parámetro.
+
+insertarEnCadaPos :: [Int] -> Int -> Int -> Set [Int]
+insertarEnCadaPos xs c 1 = agregar (insertarEn xs c 1) vacio
+insertarEnCadaPos xs c i = agregar (insertarEn xs c i) (insertarEnCadaPos xs c (i - 1))
+
+insertarEnCadaPosDeTodasLasListas :: Set [Int] -> Int -> Set [Int]
+insertarEnCadaPosDeTodasLasListas [      ] c = []    
+insertarEnCadaPosDeTodasLasListas (xs:xss) c = (insertarEnCadaPos xs c (length xs + 1)) `union` (insertarEnCadaPosDeTodasLasListas xss c)
+
+
+permutaciones :: Set Int -> Set [Int]
+permutaciones [    ] = [[]]
+permutaciones (x:xs) =  insertarEnCadaPosDeTodasLasListas (permutaciones xs) x
