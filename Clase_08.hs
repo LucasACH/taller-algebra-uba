@@ -42,3 +42,11 @@ agregarElementosAListas (x:xs) c = (agregarElementoAdelante x c) `union` (agrega
 variaciones :: Set Int -> Int -> Set [Int]
 variaciones c 0 = [[]]
 variaciones c k = agregarElementosAListas c (variaciones c (k - 1))
+
+
+-- (3) Implementar una función insertarEn :: [Int] -> Int -> Int -> [Int] que dados una lista l, un número n y una posición i (contando desde 1) devuelva una lista en donde se insertó n en la posición i de l y los elementos siguientes corridos en una posición.
+
+insertarEn :: [Int] -> Int -> Int -> [Int]
+insertarEn (x:xs) n i | i == 1 = n : (x:xs) 
+                      | otherwise = x : insertarEn xs n (i - 1) 
+
