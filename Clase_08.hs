@@ -80,3 +80,4 @@ bolitasEnCajas n k = variaciones ((listaEnterosHasta k) `union` (listaEnterosHas
 
 formasDeUbicarBolitas :: Int -> Int -> Int
 formasDeUbicarBolitas n k = factorial k `div` factorial (k - n)
+
