@@ -74,4 +74,9 @@ listaEnterosHasta n = n : listaEnterosHasta (n - 1)
 
 bolitasEnCajas :: Int -> Int -> Set [Int]
 bolitasEnCajas n k = variaciones ((listaEnterosHasta k) `union` (listaEnterosHasta n)) (length (listaEnterosHasta n))
-                   
+                
+
+-- (6) Todas las formas de ubicar n bolitas numeradas en k cajas tal que la primera caja nunca esté vacía.
+
+formasDeUbicarBolitas :: Int -> Int -> Int
+formasDeUbicarBolitas n k = factorial k `div` factorial (k - n)
